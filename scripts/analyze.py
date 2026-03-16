@@ -74,13 +74,13 @@ def analyze_data(host: str):
             
             if 'Address' in df_merged.columns:
                 df_merged['Address'] = df_merged['Address'].fillna('')
-                df_datong = df_merged[df_merged['Address'].str.contains('大同', na=False)]
+                df_target = df_merged[df_merged['Address'].str.contains('內湖', na=False)]
                 
-                if df_datong.empty:
-                    print("找不到大同區的資料，但列出有找到的有效地址資料：")
+                if df_target.empty:
+                    print("找不到內湖區的資料，但列出有找到的有效地址資料：")
                     df_merged = df_merged[df_merged['Address'] != '']
                 else:
-                    df_merged = df_datong
+                    df_merged = df_target
                 
                 print(f"最終篩選出的資料筆數: {len(df_merged)}")
 
