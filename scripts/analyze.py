@@ -12,10 +12,10 @@ def check_api_version(host: str):
         title = data.get("info", {}).get("title", "")
         version = data.get("info", {}).get("version", "")
         
-        if title != "ibon Data Access API for AI" or version != "1.0312.115":
+        if title != "ibon Data Access API for AI" or version != "1.0312.117":
             print(f"Error: API Validation failed. Title: '{title}', Version: '{version}'")
             print("Expected Title: 'ibon Data Access API for AI'")
-            print("Expected Version: '1.0312.115'")
+            print("Expected Version: '1.0312.117'")
             return False
             
         print("API Validation successful.")
